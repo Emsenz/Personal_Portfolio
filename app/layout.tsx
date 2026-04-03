@@ -19,9 +19,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Emir Sezgin — Software Engineer",
   description: "4th year Software Engineering student at EMU. Building mobile apps, games, and AI-powered web experiences.",
-  icons: {
-    icon: "/favicon.svg",
-  },
 };
 
 export default function RootLayout({
