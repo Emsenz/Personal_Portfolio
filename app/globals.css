@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
+/* ── Dark theme (default) ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030a06;
+  --foreground: #f0f0f0;
+  --accent: #00ff87;
+  --accent-dim: #10b981;
+  --surface: #0a1a0f;
+  --glass: rgba(0, 255, 135, 0.05);
+  --glass-border: rgba(0, 255, 135, 0.15);
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --background: #f4fdf7;
+  --foreground: #0d1a10;
+  --accent: #00a85a;
+  --accent-dim: #059647;
+  --surface: #e6f4eb;
+  --glass: rgba(0, 168, 90, 0.07);
+  --glass-border: rgba(0, 168, 90, 0.22);
+
+  /* Override Tailwind v4 color tokens */
+  --color-white: #0d1a10;
+  --color-gray-300: #1e3a27;
+  --color-gray-400: #2d5438;
+  --color-gray-500: #3d6648;
+  --color-gray-600: #6a9c78;
+  --color-gray-700: #8ab897;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+/* Navbar yüksekliği kadar boşluk bırak */
+section[id] { scroll-margin-top: 80px; }
+
+/* Light modda navbar arka planı */
+[data-theme="light"] nav {
+  background: rgba(244, 253, 247, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Arial, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.accent-text { color: var(--accent); }
+
+.mesh-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 255, 135, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(0, 255, 135, 0.04) 0%, transparent 50%),
+    #030a06;
+}
+
+[data-theme="light"] .mesh-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 168, 90, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 168, 90, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(0, 168, 90, 0.05) 0%, transparent 50%),
+    #f4fdf7;
+}
+
+/* ── Light mode: GitHub icon (devicon is black, keep it) ── */
+[data-theme="light"] img[alt="GitHub"] { filter: none !important; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: rgba(0, 255, 135, 0.3); border-radius: 3px; }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(0, 168, 90, 0.35); }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 255, 135, 0.5); }

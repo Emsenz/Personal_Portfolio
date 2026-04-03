@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emir Sezgin — CV</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 52px 56px;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #00c96e;
+      margin-bottom: 28px;
+    }
+
+    .header-left h1 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0a0a0a;
+    }
+
+    .header-left .title {
+      font-size: 13px;
+      color: #00c96e;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+    }
+
+    .header-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .header-right a,
+    .header-right span {
+      font-size: 12px;
+      color: #555;
+      text-decoration: none;
+      display: block;
+    }
+
+    .header-right a:hover { color: #00c96e; }
+
+    /* ── Grid layout ── */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 36px;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 28px; }
+
+    .section-title {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #00c96e;
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 5px;
+      margin-bottom: 14px;
+    }
+
+    /* ── About ── */
+    .about p {
+      color: #444;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* ── Experience / Project entries ── */
+    .entry { margin-bottom: 16px; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .entry-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #0a0a0a;
+    }
+
+    .entry-date {
+      font-size: 11px;
+      color: #888;
+      white-space: nowrap;
+    }
+
+    .entry-sub {
+      font-size: 12px;
+      color: #00c96e;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .entry-desc {
+      font-size: 12.5px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      font-size: 10.5px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      font-weight: 500;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar .section-title { }
+
+    .sidebar-item {
+      margin-bottom: 10px;
+    }
+
+    .sidebar-item .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .sidebar-item .value {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .skill-group { margin-bottom: 12px; }
+
+    .skill-group-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .skill-pill {
+      font-size: 10.5px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+    }
+
+    .cert-item {
+      margin-bottom: 12px;
+    }
+
+    .cert-name {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #0a0a0a;
+    }
+
+    .cert-issuer {
+      font-size: 11.5px;
+      color: #666;
+    }
+
+    .cert-date {
+      font-size: 11px;
+      color: #00c96e;
+      font-weight: 500;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 12.5px;
+    }
+
+    .lang-name { color: #333; font-weight: 500; }
+    .lang-level { color: #888; }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; }
+      .page { padding: 36px 44px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Emir Sezgin</h1>
+      <div class="title">Software Engineer</div>
+    </div>
+    <div class="header-right">
+      <span>📍 Cyprus / Remote</span>
+      <a href="mailto:emir.sezgin.2003@hotmail.com">emir.sezgin.2003@hotmail.com</a>
+      <a href="https://github.com/Emsenz">github.com/Emsenz</a>
+      <a href="https://linkedin.com/in/emir-sezgin-861343335">linkedin.com/in/emir-sezgin-861343335</a>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- Main column -->
+    <div class="main">
+
+      <!-- About -->
+      <div class="section about">
+        <div class="section-title">About</div>
+        <p>
+          Final year Software Engineering student at Eastern Mediterranean University with a strong passion for
+          building impactful products across mobile, web, and game development. Experienced with Flutter, React,
+          Next.js, and AI integrations. I enjoy turning ideas into products that actually work.
+        </p>
+      </div>
+
+      <!-- Projects -->
+      <div class="section">
+        <div class="section-title">Projects</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Gezish AI</span>
+            <span class="entry-date">2026</span>
+          </div>
+          <div class="entry-sub">AI-Powered Travel Planner</div>
+          <div class="entry-desc">
+            Web application that generates personalized travel itineraries using AI. Features destination
+            recommendations, real-time travel insights, and an intuitive planning interface.
+          </div>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">AI Integration</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Portfolio Website</span>
+            <span class="entry-date">2026</span>
+          </div>
+          <div class="entry-sub">Personal Portfolio</div>
+          <div class="entry-desc">
+            Fully animated personal portfolio with multilingual support (TR/EN), interactive project showcase
+            with hover previews, and a 3D animated character avatar.
+          </div>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Framer Motion</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Zombie Defense Game</span>
+            <span class="entry-date">2025</span>
+          </div>
+          <div class="entry-sub">Mobile Game — Flutter & Flame</div>
+          <div class="entry-desc">
+            2D mobile zombie survival game with wave-based enemy AI, weapon systems, and smooth gameplay
+            mechanics built using the Flutter Flame engine.
+          </div>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Flame Engine</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Game Dev</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">ScanWiser</span>
+            <span class="entry-date">2025</span>
+          </div>
+          <div class="entry-sub">Group Project — Mobile Barcode Scanner</div>
+          <div class="entry-desc">
+            Mobile app for product price comparison across supermarkets using barcode scanning. Collaborated
+            in a team environment with Git-based version control.
+          </div>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">GitHub Collaboration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Eastern Mediterranean University</span>
+            <span class="entry-date">2021 — 2026</span>
+          </div>
+          <div class="entry-sub">Bachelor of Science — Software Engineering</div>
+          <div class="entry-desc">Final year student. Famagusta, Northern Cyprus.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Skills -->
+      <div class="section">
+        <div class="section-title">Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Mobile</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Flutter</span>
+            <span class="skill-pill">Dart</span>
+            <span class="skill-pill">Flame Engine</span>
+            <span class="skill-pill">Firebase</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Web & AI</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Next.js</span>
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">TypeScript</span>
+            <span class="skill-pill">Tailwind CSS</span>
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Backend & Tools</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">GitHub</span>
+            <span class="skill-pill">Firestore</span>
+            <span class="skill-pill">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="section">
+        <div class="section-title">Certifications</div>
+
+        <div class="cert-item">
+          <div class="cert-name">Modern JavaScript From The Beginning 2.0</div>
+          <div class="cert-issuer">Udemy</div>
+          <div class="cert-date">Mar 2026</div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-name">Google AI</div>
+          <div class="cert-issuer">Google</div>
+          <div class="cert-date">2025</div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="section">
+        <div class="section-title">Languages</div>
+        <div class="lang-item">
+          <span class="lang-name">Turkish</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">Professional</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
